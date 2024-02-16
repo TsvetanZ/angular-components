@@ -18,14 +18,28 @@ export class ListItemComponent  {
 
   @Output() custumEvent = new EventEmitter<ICustomEvent>();
 
-  constructor() { }
+  constructor() { 
+    console.log(this.user)
+  }
+
+  ngOnInit() {
+        console.log(this.user);
+      }
 
   selectClickHandler($event: MouseEvent) {
     $event.stopPropagation();
     this.custumEvent.emit({test: 123 });
-
   }
-
- 
-
 }
+
+//class Person {
+//  name!: string;
+//  ngOnInit() {
+//    console.log(this.name);
+//  }
+//}
+//
+//const ivan = new Person ();
+//ivan.name = 'Ivan'
+//
+//ivan.ngOnit();
